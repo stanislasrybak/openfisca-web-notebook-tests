@@ -1,6 +1,6 @@
 {
  "metadata": {
-  "name": ""
+  "name": "celibataire-chomeur-sans-enfant"
  },
  "nbformat": 3,
  "nbformat_minor": 0,
@@ -21,7 +21,7 @@
      "language": "python",
      "metadata": {},
      "outputs": [],
-     "prompt_number": 5
+     "prompt_number": 1
     },
     {
      "cell_type": "code",
@@ -40,8 +40,8 @@
       "        ],\n",
       "    individus = [\n",
       "        dict(\n",
-      "            activite = u'Retrait\u00e9',\n",
-      "            birth = 1940,\n",
+      "            activite = u'Ch\u00f4meur',\n",
+      "            birth = 1970,\n",
       "            id = 'ind0',\n",
       "            statmarit = u'C\u00e9libataire',\n",
       "            ),\n",
@@ -49,16 +49,15 @@
       "    menages = [\n",
       "        dict(\n",
       "            personne_de_reference = 'ind0',\n",
-      "            so = 4,\n",
       "            ),\n",
-      "        ],\n",
-      "    )\n",
+      "    ],\n",
+      " )\n",
       "years = [2013]"
      ],
      "language": "python",
      "metadata": {},
      "outputs": [],
-     "prompt_number": 6
+     "prompt_number": 2
     },
     {
      "cell_type": "code",
@@ -71,10 +70,10 @@
       "                count = 3,\n",
       "                max = 12500,\n",
       "                min = 0,\n",
-      "                name = 'rsti',\n",
+      "                name = 'choi',\n",
       "                ),\n",
       "            ],\n",
-      "        legislation_url = 'http://localhost:2014/api/1/default-legislation',\n",
+      "        legislation_url = 'http://api.openfisca.fr/api/1/default-legislation',\n",
       "        test_case = test_case,\n",
       "        year = year,\n",
       "        )\n",
@@ -88,13 +87,13 @@
      "language": "python",
      "metadata": {},
      "outputs": [],
-     "prompt_number": 7
+     "prompt_number": 3
     },
     {
      "cell_type": "code",
      "collapsed": false,
      "input": [
-      "request = urllib2.Request('http://localhost:2014/api/1/simulate', headers = {\n",
+      "request = urllib2.Request('http://api.openfisca.fr/api/1/simulate', headers = {\n",
       "    'Content-Type': 'application/json',\n",
       "    'User-Agent': 'OpenFisca-Notebook',\n",
       "    })\n",
@@ -110,7 +109,7 @@
      "language": "python",
      "metadata": {},
      "outputs": [],
-     "prompt_number": 8
+     "prompt_number": 4
     },
     {
      "cell_type": "code",
@@ -148,7 +147,7 @@
      "language": "python",
      "metadata": {},
      "outputs": [],
-     "prompt_number": 9
+     "prompt_number": 5
     },
     {
      "cell_type": "code",
@@ -164,25 +163,20 @@
        "output_type": "stream",
        "stream": "stdout",
        "text": [
-        "Retraites brutes                         |      0 |   6524 |  13048\n",
-        "CSG d\u00e9ductible (retraite)                |      0 |   -274 |   -548\n",
-        "Retraites                                |      0 |   6250 |  12500\n",
-        "CSG non d\u00e9ductible (pensions)            |      0 |   -157 |   -313\n",
-        "CRDS (pensions)                          |      0 |    -33 |    -65\n",
-        "Retraites nettes                         |      0 |   6061 |  12122\n",
-        "Pensions                                 |      0 |   6061 |  12122\n",
-        "Revenus nets                             |      0 |   6061 |  12122\n",
-        "Allocation de solidarit\u00e9 aux personnes ag\u00e9es |   9326 |   2802 |      0\n",
-        "Minima sociaux                           |   9326 |   2802 |      0\n",
-        "Allocation logement social               |    221 |    221 |      0\n",
-        "CRDS (allocation logement)               |     -1 |     -1 |      0\n",
-        "Prestations logement                     |    220 |    220 |      0\n",
-        "Prestations sociales                     |   9546 |   3022 |      0\n",
-        "Revenu disponible                        |   9546 |   9082 |  12122\n"
+        "Ch\u00f4mage brut                             |      0 |   6250 |  12500\n",
+        "Ch\u00f4mage                                  |      0 |   6250 |  12500\n",
+        "Ch\u00f4mage net                              |      0 |   6250 |  12500\n",
+        "Pensions                                 |      0 |   6250 |  12500\n",
+        "Revenus nets                             |      0 |   6250 |  12500\n",
+        "Revenu de solidarit\u00e9 active              |   5103 |      0 |      0\n",
+        "Aide exceptionelle de fin d'ann\u00e9e        |    152 |      0 |      0\n",
+        "Minima sociaux                           |   5255 |      0 |      0\n",
+        "Prestations sociales                     |   5255 |      0 |      0\n",
+        "Revenu disponible                        |   5255 |   6250 |  12500\n"
        ]
       }
      ],
-     "prompt_number": 10
+     "prompt_number": 6
     },
     {
      "cell_type": "code",
@@ -190,8 +184,7 @@
      "input": [],
      "language": "python",
      "metadata": {},
-     "outputs": [],
-     "prompt_number": 10
+     "outputs": []
     }
    ],
    "metadata": {}
